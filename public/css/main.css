@@ -1,0 +1,519 @@
+:root {
+    --blue : #1fa2f1;
+    --bluelight: #9bd1f9;
+    --buttonhoverbg: aliceblue ;
+    --lightgrey: rgb(167, 186, 199);
+    --borderc : rgb(87, 81, 81);
+    --greybuttext: rgba(0,0,0,0.34);
+    --red: rgb(226,34,94);
+
+    
+    --spacing : 15px;
+
+}
+.wrapper {
+    background-color: black;
+}
+
+.logincontainer {
+margin-top: -5%;
+
+}
+
+/* styling the anchor tags */
+a {
+    color: inherit;
+}
+ 
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* styling h1 for all the pages */
+
+body h1 {
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* aligning the icons in navbar */
+nav {
+    top:30%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    /* left: auto; */
+}
+nav a {
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+     font-size: 30px;
+     width: 50px;
+     height: 50px;
+     color: var(--lightgrey);            
+ }
+
+nav a.blue {
+     color: var(--blue);
+     /* using a css variable */
+
+ }
+
+nav a:hover {
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--buttonhoverbg) ;
+    color: var(--blue);
+    border-radius: 50%;
+
+}
+nav span{
+    font-size: 5px;
+    font-weight: 600;
+    color: white; 
+}
+nav i {
+    display: inline-block;
+}
+nav p {
+    display: inline;
+    font-size: 10px;
+}
+/* to prevent overflowing of the content */
+.row {
+    margin: 0;;
+} 
+
+ /* might change */
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--greybuttext);
+}
+
+button i,
+button span {
+    pointer-events: none;
+}
+
+/* styling the maincontainer */
+.mainsectioncontainer {
+    background-color: var(--buttonhoverbg);
+    padding: 0;
+    border-left: 2px solid var(--lightgrey);
+    border-right: 2px solid var(--lightgrey); 
+    display: flex;
+    flex-direction: column;     
+}
+
+.titlecontainer {
+    height: 53px;
+    padding: 0  var(--spacing);
+    display: flex;
+    align-items:center ;
+    border-bottom: 1px solid var(--lightgrey);
+    flex-shrink: 0;
+}
+
+.titlecontainer h1 {
+    flex: 1;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* styling the post form container in mixins.pug */
+.postFormContainer {
+    display: flex;
+    padding: var(--spacing);
+    padding-top: var(--spacing);
+    border-bottom: 10px solid var(--lightgrey);    
+    flex-shrink: 0;
+}
+
+.userImageContainer {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+}
+
+.userImageContainer img {
+    width: 100%;
+}
+
+.textareacontainer {
+    flex: 1;
+    padding-left: var(--spacing);
+}
+
+.textareacontainer textarea {
+    width: 100%;
+    border: 2px solid var(--borderc);
+    border-radius: 5px;
+    resize:none;
+    font-size: 15px;
+}
+
+/* styling submitpostbutton from mixins.pug */
+
+#submitpostbutton , #sub
+{
+    color: var(--buttonhoverbg);
+    background-color: black;
+    font-weight: 600;
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+#sub:hover{
+    border-color: var(--bluelight);
+}
+
+#submitpostbutton:disabled
+ {
+    background-color: #e3dddd;
+    color: rgb(170, 169, 169);
+    border: 2px solid rgb(170, 169, 169);
+
+}
+
+#submitpostbutton:hover {
+    border-color: var(--bluelight);
+}
+
+
+/* styling the maincontentcontainer from common.js */
+
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    cursor: pointer;
+    border-bottom: 1px solid var(--lightgrey);
+    flex-shrink: 0;
+}
+
+.maincontentcontainer {
+    /* to take up all the remaining space it can */
+    flex: 1;
+    display: flex;
+}
+
+.postcontentcontainer {
+    padding-left: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.username ,
+.date {
+    color: var(--borderc);
+
+}
+
+.displayname {
+    font: bold;
+}
+
+.postfooter {
+    display: flex;
+    align-items: center;
+}
+
+.postbuttoncontainer,
+.postfooter {
+    flex: 1;
+    display: flex;
+}
+
+.postfooter .postbuttoncontainer button {
+    /* to change the size of the background circle of the icons like comment share */
+    padding: 2px 7px;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header a,
+.header span {
+    padding-right: 5px;
+}
+
+.postcontentcontainer.header {
+    display:flex;
+}
+.postcontentcontainer.header.date {
+    flex:1;
+    /* flex doesn't work until the parent class also has flex in it's class */
+}
+
+/* style for hover on heart, comment, retweet */
+.postbuttoncontainer button:hover {
+    background-color: rgb(222, 218, 218);
+    color: var(--borderc);
+    border-radius: 50%;
+    -webkit-text-size-adjust: 80%;
+    text-size-adjust: 80%;
+}
+
+/* to make the hearts become red */
+.postbuttoncontainer.red button.active{
+    color: var(--red);
+    transition: all ease-in-out 0.2s;
+}
+
+.likebutton .liketooltip {
+    visibility: hidden;
+    /* width: 120px; */
+    background-color: black;
+    color: #fff;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+.likebutton:hover .liketooltip {
+    visibility: visible;
+  }
+
+
+/* to make the share button become blue */
+.postbuttoncontainer.blue button.active{
+    color: rgb(26, 26, 125);
+    transition: all ease-in-out 0.2s;
+}
+.retweetbutton .retweettooltip {
+    visibility: hidden;
+    /* width: 120px; */
+    background-color: black;
+    color: #fff;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+.retweetbutton:hover .retweettooltip {
+    visibility: visible;
+  }
+
+/* to make the trash button become black */
+.deletebutton .deletetooltip {
+    visibility: hidden;
+    /* width: 120px; */
+    background-color: black;
+    color: #fff;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+.deletebutton:hover .deletetooltip {
+    visibility: visible;
+  }
+
+
+
+.postactioncontainer {
+    font-size: 13px;
+    color: var(--borderc);
+    margin-bottom: var(--spacing); 
+}
+
+/* changing the style of the modal */
+.modal .postFormContainer {
+
+    border-bottom: none;
+    padding:0px;
+}
+
+#submitreplybutton:disabled
+{
+    background-color: #e3dddd;
+    color: rgb(170, 169, 169);
+    border: 2px solid rgb(170, 169, 169);
+}
+#submitdeletepostbutton , #closebutton
+{
+    color: var(--buttonhoverbg);
+    background-color: black;
+    font-weight: 600;
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+#submitdeletepostbutton:hover , #closebutton:hover 
+{
+    border-color: var(--bluelight);
+}
+
+.modal-footer{
+    padding-top: -10px;
+}
+.modal-header{
+    padding-bottom: -2px;
+}
+
+
+/* PROFILE PAGE */
+
+.errorMessage {
+    padding: var(--spacing);
+    
+}
+
+.profileheadcontainer .coverphotocontainer{
+    height: 200px;
+    background-color: var(--lightgrey);
+    border-radius: 7px;
+    position: relative;
+}
+
+.profileheadcontainer .userImageContainer {
+    height: 132px;
+    width: 132px;
+    margin-left: var(--spacing);
+    position: absolute;
+    /* sets the position of the image to absolute wrt nearest parent container */
+    top:130px;    
+}
+
+.profileheadcontainer .userImageContainer img{
+    border: 4px solid black;
+    border-radius: 50%;
+}
+
+.profileheadcontainer{
+    position: relative;
+}
+.profilebuttonscontainer {
+    position: absolute;
+    right: var(--spacing);
+}
+
+.followbutton ,
+.msgbuttonclass
+{
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: var(--spacing);
+    margin-inline-start: var(--spacing);
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.followbutton:hover,
+.msgbuttonclass:hover 
+{
+    background-color: black;
+    color: white;
+}
+
+.profilebutton{
+    margin-right: 5px;
+}
+
+.followbutton.following{
+    background-color: black;
+    color: white;
+}
+
+.userdetailscontainer{
+    margin-top: 70px;
+    font-weight: 700;
+}
+
+.coverphotocontainer{
+    position: relative;
+}
+.profileusername{
+    display: inline;
+    position:absolute;
+    bottom: 5px;
+    left:155px;
+    font-weight: 700;
+}
+
+.profileheadcontainer .userdetailscontainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing);
+}
+
+.profileheadcontainer .userdetailscontainer a{
+    color: black;
+    font-family: 700;
+}
+
+.followerscontainer .value{
+    margin-right: 5px;
+}
+
+/* this style applies to all the elements in .followerscontainer that don't have the class=value */
+.followerscontainer span:not(.value){
+    color: grey;
+    margin-right: 5px;
+}
+.followerscontainer a{
+    margin-right: var(--spacing);
+}
+
+.tabscontainer{
+    display: flex;
+    flex-direction: row;
+    flex-shrink:0 ;  /* for safari */
+    margin-top: var(--spacing);
+    border-bottom: 1px solid var(--lightgrey); 
+}
+
+.tab {
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    color: black;
+    font-weight: 700;
+}
+
+.tab.active{
+    color: var(--blue);
+    border-bottom: 4px solid var(--lightgrey);
+}
+.tab:hover{
+    color: var(--blue);
+}
+
+
+
+
+
+
+
+
+
+

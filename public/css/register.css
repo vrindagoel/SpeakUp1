@@ -1,0 +1,37 @@
+.logincontainer {
+    position:relative;
+    top: 50%;
+    right: 0;
+    background-color: aliceblue;
+    padding: 50px 100px 30px 30px;
+    border: black solid 5px;
+    box-sizing: content-box;
+    border-radius: 15px;
+    /* width: 40%; */
+    max-width: 100%;
+    height: auto;
+}
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 100px 100px;
+  }
+
+#sub {
+    background-color: rgb(180, 169, 169);
+    border-radius: 10px;
+    padding: 7px;
+    size: 20px;
+    margin-right: 5px;
+    border: none;
+    min-height:30px; 
+    min-width: 80px;
+    font-size: larger;
+}
+
+button.hover {
+   background-color: beige;
+   transition: 0.5s; 
+}

@@ -1,0 +1,52 @@
+extends layouts/main-layout.pug
+
+block content
+    if !profileuser
+        span.errorMessage Profile not found
+    else
+        script.
+            //-var userLoggedIn = !{userLoggedInjs};
+            var ProfileUserId = '!{profileuser._id}';
+            
+        .profileheadcontainer 
+            .coverphotocontainer 
+                .userImageContainer 
+                    img(src=profileuser.profilePic, alt="Profile Picture")
+                span.profileusername @#{profileuser.username} 
+            .profilebuttonscontainer
+                //-if profileUser._id != userLoggedIn._id
+                +createfollowbutton(profileuser, false)
+                button.msgbuttonclass(onclick=`/messages/${profileuser._id}`)
+                    i.fas.fa-envelope.profilebutton
+                    | Messages
+            .userdetailscontainer 
+                //- span.displayname #{profileuser.firstname} #{profileuser.lastname}
+                span.description #{profileuser.description}
+
+                .followerscontainer
+                    a(href=`/profile/${profileuser._id}/following`)
+                        span.value #{0}
+                        span.text Following
+                    a(href=`/profile/${profileuser._id}/followers`)
+                        span.value #{0}
+                        span.text Followers
+
+        .tabscontainer 
+            +createtab("Posts", `/profile/${profileuser.username}`, true)
+            //-+createtab("Retweeted By Users", `/profile/${profileuser.username}/RetweetedByUsers`, false)
+                
+                
+
+                
+                
+
+        .postContainer
+
+        +createpostmodals(userLoggedIn)
+        //- collaborated all the modal in mixins.pug =>for reference
+
+
+block scripts 
+    script(src="/javascript/profile.js")
+    
+        

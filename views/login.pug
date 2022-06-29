@@ -1,0 +1,31 @@
+extends layouts/login-layout.pug 
+
+block content
+    .split.left 
+        .centered 
+    .split.right 
+        .centered 
+            .logincontainer 
+                h1 Login 
+                form(action="", method="post")
+                    p.errorMessage #{errorMessage}
+                    .ui.form.success
+                        //- .field
+                        //-     label Username 
+                        //-     input(type='text', placeholder='Username or Email', name= "loginusername" ,required)
+                    
+                        //- .field
+                        //-     label Password
+                        //-     input(type='password', placeholder='password',name="loginpass", required)
+                        
+                        .field
+                            label Username 
+                            input(type='text', placeholder='Username or Email', name= "loginusername" , value="vrindagoel25" , required)
+                    
+                        .field
+                            label Password
+                            input(type='password', placeholder='password',name="loginpass", value="twitter@123" ,required)
+                    br
+                    input#sub(type="submit", value="LogIn")
+                    a(href="/register") New User? Join Today 
+        

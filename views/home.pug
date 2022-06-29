@@ -1,0 +1,15 @@
+extends layouts/main-layout.pug
+    
+block content
+    +createPostForm(userLoggedIn)
+    //- calling the function we created in mixins.pug, now anything that function displays will be injected here
+    .postContainer
+
+    +createpostmodals(userLoggedIn)
+    //- collaborated all the modal in mixins.pug =>for reference
+
+
+block scripts 
+    script(src="/javascript/home.js")
+    
+        

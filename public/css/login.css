@@ -1,0 +1,76 @@
+body {
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 100px 100px;
+}
+
+.logincontainer {
+    position:relative;
+    top: 50%;
+    right: 0;
+    background-color: aliceblue;
+    padding: 50px 100px 30px 30px;
+    border: black solid 5px;
+    box-sizing: content-box;
+    border-radius: 15px;
+    /* width: 40%; */
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-image: url('../images/login.jpg'); 
+    background-size: cover;
+    background-attachment: inherit;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    border-left: 5px solid black;
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .ui.secondary.basic.button {
+      display: inline;
+  }
+
+ a:hover {
+    text-decoration: underline;
+ }
+
+ h1,label {
+     text-align: left;
+ }

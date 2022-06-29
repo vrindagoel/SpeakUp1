@@ -1,0 +1,46 @@
+extends layouts/register-layout.pug 
+
+block content 
+    .logincontainer
+        h1 Register Here
+        form#regform(method="post" , onsubmit="event.preventDefault(); validatepassword();") 
+            .ui.form
+                p.errorMessage #{errorMessage}
+                .field
+                    label First name
+                    input(type='text', placeholder='First Name', name='firstname', value = firstname,  required="")
+                .field
+                    label Last name
+                    input(type='text', placeholder='Last Name', name="lastname" , value = lastname, required="")
+                .field
+                    label Username
+                    input(type="text", name="username" , placeholder="UserName" , value = username, required="")
+                .field
+                    label Email-Id
+                    input(type="email", name="email" , placeholder="Email-Id" ,value = email , required="")
+                .field
+                    label Password
+                    input#password(type='password', name="password" , placeholder="Password" , required="")
+                .field
+                    label Confirm Password
+                    input#passwordConf(type='password', name="passwordConf", placeholder="Password", required="")
+                .ui.checkbox
+                    input.hidden(type='checkbox', tabindex='0', required="")
+                    label I agree to the terms and conditions
+                br
+                input#sub(type="submit", value="Register")
+                a(href="/login") Already have an account? LogIn
+    script. 
+        const password1 = document.getElementById("password")
+        const passconfirm = document.getElementById("passwordConf")
+        const  form = document.getElementById("regform")
+
+        function validatepassword() {
+            if(password1.value  != passconfirm.value ) {
+                alert("Passwords don't match, Please try again.")
+            }
+            else {
+                form.submit();
+            }
+        }
+
