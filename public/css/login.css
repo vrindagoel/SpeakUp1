@@ -7,7 +7,7 @@ body {
 .wrapper {
   display: flex;
   justify-content: center;
-  margin: 100px 100px;
+  /* margin: 100px 100px; */
 }
 
 .logincontainer {
@@ -20,8 +20,9 @@ body {
     box-sizing: content-box;
     border-radius: 15px;
     /* width: 40%; */
-    max-width: 100%;
+    /* max-width: 100%; */
     height: auto;
+    min-width: 200px;
 }
 
 form {
@@ -43,15 +44,34 @@ form {
   /* Control the left side */
   .left {
     left: 0;
-    background-image: url('../images/login.jpg'); 
+    background-image: url('../images/login.png'); 
     background-size: cover;
     background-attachment: inherit;
+    justify-content: center;
+
+  }
+  @media screen and (max-width: 992px) {
+    .split.left {
+      width: 40%;;
+    }
+    .split.right{
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .split.left {
+      width: 0%;
+    }
+    .split.right{
+      width: 100%;
+    }
   }
   
   /* Control the right side */
   .right {
     right: 0;
-    border-left: 5px solid black;
+    /* border-left: 5px solid black; */
   }
   
   /* If you want the content centered horizontally and vertically */

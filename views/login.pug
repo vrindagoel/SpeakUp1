@@ -1,7 +1,7 @@
 extends layouts/login-layout.pug 
 
 block content
-    .split.left 
+    .split.left
         .centered 
     .split.right 
         .centered 
@@ -9,22 +9,14 @@ block content
                 h1 Login 
                 form(action="", method="post")
                     p.errorMessage #{errorMessage}
-                    .ui.form.success
-                        //- .field
-                        //-     label Username 
-                        //-     input(type='text', placeholder='Username or Email', name= "loginusername" ,required)
-                    
-                        //- .field
-                        //-     label Password
-                        //-     input(type='password', placeholder='password',name="loginpass", required)
-                        
+                    .ui.form.success                        
                         .field
                             label Username 
-                            input(type='text', placeholder='Username or Email', name= "loginusername" , value="vrindagoel25" , required)
+                            input(type='text', placeholder='Username or Email', name= "loginusername" ,value ="vrinda.goel25@gmail.com", required)
                     
                         .field
                             label Password
-                            input(type='password', placeholder='password',name="loginpass", value="twitter@123" ,required)
+                            input(type='password', placeholder='password',name="loginpass",value="twitter@123", required)
                     br
                     input#sub(type="submit", value="LogIn")
                     a(href="/register") New User? Join Today 

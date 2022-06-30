@@ -11,8 +11,10 @@
     --spacing : 15px;
 
 }
+
 .wrapper {
     background-color: black;
+    height: 100%;
 }
 
 .logincontainer {
@@ -87,7 +89,7 @@ nav p {
 }
 /* to prevent overflowing of the content */
 .row {
-    margin: 0;;
+    margin: 0;
 } 
 
  /* might change */

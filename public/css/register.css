@@ -1,7 +1,11 @@
-.logincontainer {
-    position:relative;
-    top: 50%;
-    right: 0;
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+.register-logincontainer {
+    position: relative;
+    /* top: 10%; */
     background-color: aliceblue;
     padding: 50px 100px 30px 30px;
     border: black solid 5px;
@@ -9,29 +13,112 @@
     border-radius: 15px;
     /* width: 40%; */
     max-width: 100%;
-    height: auto;
+    height: max-content;
+    margin-top: 30px;
+    min-width: 270px;
 }
 
 
-.wrapper {
+.register-wrapper {
     display: flex;
     justify-content: center;
-    margin: 100px 100px;
+    background-color: black;
+    height: 100%;
+    padding: 30px;
+    height: max-content;
   }
 
 #sub {
     background-color: rgb(180, 169, 169);
     border-radius: 10px;
-    padding: 7px;
-    size: 20px;
+    padding: 5px 20px;
+    size: 17px;
     margin-right: 5px;
     border: none;
-    min-height:30px; 
+    min-height:20px; 
     min-width: 80px;
     font-size: larger;
+    display: block;
+    /*set the button in center*/
+    margin: auto;
+    font-weight: 600;
 }
 
 button.hover {
    background-color: beige;
    transition: 0.5s; 
 }
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-image: url('../images/login.png'); 
+    background-size: cover;
+    background-attachment: inherit;
+
+  }
+  
+  @media screen and (max-width: 992px) {
+    .split.left {
+      width: 40%;;
+    }
+    .split.right{
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .split.left {
+      width: 0%;
+    }
+    .split.right{
+      width: 100%;
+    }
+  }
+  
+
+  /* Control the right side */
+  .right {
+    right: 0;
+    /* border-left: 5px solid black; */
+    padding: 20px 0px 50px;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 150px 0px 150px 0px;
+  }
+.ui.secondary.basic.button {
+    display: inline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,label {
+   text-align: left;
+}
+
+
+  
